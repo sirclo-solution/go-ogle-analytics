@@ -62,9 +62,10 @@ func (h *Event) Value(value int64) *Event {
 
 //Specify additional fields to the event
 //Currently supporting dimension only, Protocol name Format :"cd<index No.>"
-func (h *Event) FieldsObject(obj map[string]string) {
+func (h *Event) FieldsObject(obj map[string]string) *Event {
 	h.fieldsObject = obj
 	h.fieldsObjectSet = true
+	return h
 }
 
 func (h *Event) Copy() *Event {
